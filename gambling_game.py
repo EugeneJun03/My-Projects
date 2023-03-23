@@ -1,6 +1,34 @@
+import random
+
 MAX_LINE = 3
 MAX_BET = 100
 MIN_BET = 1
+
+ROWS = 3
+COLS = 3
+
+symbol_count = {
+    "A": 2,
+    "B": 4,
+    "C": 6,
+    "D": 8
+}
+
+def get_slot_machine_spin(rows, cols, symbols):
+    all_symbols = []
+    for symbol, symbol_count in symbols.items():
+        for _ in range(symbol_count): # _를 사용하면 변수를 사용하지 않고 반복문을 실행시킬 수 있다.
+            all_symbols.append(symbol)
+    colums = [[],[],[]]
+    for col in range(cols):
+        column = []
+        current_symbols = all_symbols[:] # 두 개의 리스트가 하나의 저장위치를 공유하지 않게 하기위해서 뒤에[:]를 붙여 주어야 한다.
+        for row in range(rows):
+            value = random.choice(current_symbols)
+            current_symbols.remove(value)
+        colums.append(column)
+    return colums
+
 def deposit():
     while True:
         amount = input("What would you like to diposit? $:")
