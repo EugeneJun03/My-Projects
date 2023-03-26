@@ -19,15 +19,26 @@ def get_slot_machine_spin(rows, cols, symbols):
     for symbol, symbol_count in symbols.items():
         for _ in range(symbol_count): # _를 사용하면 변수를 사용하지 않고 반복문을 실행시킬 수 있다.
             all_symbols.append(symbol)
-    colums = [[],[],[]]
+    columns = []
     for col in range(cols):
         column = []
         current_symbols = all_symbols[:] # 두 개의 리스트가 하나의 저장위치를 공유하지 않게 하기위해서 뒤에[:]를 붙여 주어야 한다.
         for row in range(rows):
             value = random.choice(current_symbols)
             current_symbols.remove(value)
-        colums.append(column)
-    return colums
+            column.append(value)
+        columns.append(column)
+    return columns
+
+def print_slot_machine(columns): #이 함수는 가로로 출력되는 슬롯 머신을 세로로 출력되게 변환시켜주는 함수이다.
+    for row in range(len(columns[0])):
+        for i, colunm in enumerate(columns): # enumerate는 각 개체의 시퀀스 값과 그 자체의 값을 반환해주는 함수이다.
+            if i != len(columns) - 1:
+                print(colunm[row], end=" | ")
+            else:
+                print(colunm[row], end="")
+        print()
+
 
 def deposit():
     while True:
@@ -80,5 +91,7 @@ def main():
         else:
             break
     print(f"your are betting {bet} on {lines} lines. Total bet is equal to: {total_bet}")
+    slots = get_slot_machine_spin(ROWS, COLS, symbol_count)
+    print_slot_machine(slots)
 
 main()
