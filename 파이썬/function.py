@@ -56,6 +56,8 @@ def nonbuggy(arg, result=None):
 '------------------------------------------------------------------------------'
 
 """+1 위치인자 모으기(애스터리스크:*)"""
+#에더리스크는 매개변수에서 위치 인자 변수들을 튜플로 묵는다.
+#*를 사용할 때 args를 사용할 필요는 없지만 관용적으로 사용한다.
 #ex)2
 def print_args(*args):
     print('Positional argument tuple:', args)
@@ -78,6 +80,7 @@ All the results: scarf monocle wax"""
 '------------------------------------------------------------------------------'
 
 """+2 키워드 인자 모으기(더블 에더리스크:**)"""
+#키워드인자를 딕셔너리로 묶기 위해서는 더블 에더리스크를 사용해야한다.
 def print_kwargs(**kwarg):
     print('keyword arguments:', kwarg)
 """
@@ -85,12 +88,13 @@ def print_kwargs(**kwarg):
 keyword arguments: {'wine': 'melot', 'entree': 'mutton', 'dessert': 'macaroon'}"""
 #매개변수와 마찬가지로 *arg, **kwarg를 같이 사용하려면 이들을 순서대로 배치해야한다.
 
-#추가적인 스킬 Docstring - 함수의 몸체 시작 부분에 문서를 붙여서 함수의 정의를 보충설명해 줄 수 있댜.
+#추가적인 스킬 "Docstring" - 함수의 몸체 시작 부분에 문서를 붙여서 함수의 정의를 보충설명해 줄 수 있댜.
 #ex)1
 def echo(any):
     'echo reterns its input argument'
     return any
 """
+#help()를 사용하면 함수내에 서식화된 docstring를 읽어준다.
 >>> help(echo)
 Help on function echo in module __main__:
 
