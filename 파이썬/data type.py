@@ -612,6 +612,19 @@ True
 False
 '''
 
+#딕셔너리 할당(=), 복사(copy())
+'''앞에서 설명하였던 것 같아 a=b식으로 할당을 하면
+a를 변경하면 b또한 변경된다.
+그러므로 내용만 복사하기 위해서는 copy()를 사용하면된다.
+>>> signals = {'green':'go', 'yellow':'go', 'red':'smile for the camera'}
+>>> original_signals = signals.copy()
+>>> signals['blue'] = 'confuse everyone'
+>>> signals
+{'blue':'confuse everyone', 'green':'go', 'yellow':'go', 'red':'smile for the camera'}
+>>> original_signals
+{'green':'go', 'yellow':'go', 'red':'smile for the camera'}
+'''
+
 '------------------------------------------------------------------------------'
 
 '''6) 집합 자료형
