@@ -1,4 +1,4 @@
-# 컴프리헨션(comprehension)은 자료형을 아주 콤펙트하게 만드는 파이써니한 방법이다.
+# 컴프리헨션(comprehension)은 자료형을 아주 콤펙트하게 만드는 파이써닉한 방법이다.
 # 즉, 초급이상의 파이썬을 사용한다고 볼 수 있다.
 
 """리스트 컴프리헨션(for, if)
@@ -8,7 +8,7 @@
 >>> number_list2 = [number-1 for number in range(1,6)]
 [0, 1, 2, 3, 4]
 
->>> a_list = [number for number in range(1,6) if number % 2 ==1]
+>>> a_list = [number for number in range(1,6) if number % 2 == 1]
 [1, 3, 5]
 
 >>> rows = range(1,4)
