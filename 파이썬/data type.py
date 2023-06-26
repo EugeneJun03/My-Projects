@@ -196,7 +196,7 @@ print("저의 이름은 %s 입니다. 나이는 %d 입니다." %(name, age))
 
 # 또 다른 포맷 방식
 
-a = "안녕 내 이름은 {} 이야!".foramta("의진")
+a = "안녕 내 이름은 {} 이야!".format("의진")
 print(a)
 
 b = "넌 이름이 {} 이구나".format("진하")
@@ -307,7 +307,7 @@ ValueError: substring not found-1'''
 
 '''7) 문자열 나누기(split)
 >>> a = "Life is too short"
->>> a.split()
+>>> a.split() # split내부에 아무것도 넣지 않으면 공백을 기준으로 나누어 리스트를 만들게 된다. 
 ['Life', 'is', 'too', 'short']
 >>> b = "a:b:c:d"
 >>> b.split(':')
