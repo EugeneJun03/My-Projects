@@ -12,7 +12,7 @@ def my_range(first = 0, last = 10, step = 1):
     while number < last:
         yield number
         number += step
-"""
+
 >>> my_range
 <function my_range at 0x0000028B56C18B80>
 >>> ranger = my_range(1,5)
@@ -25,4 +25,57 @@ def my_range(first = 0, last = 10, step = 1):
 2
 3
 4
-"""
+
+
+# next를 사용하여 다음 yield를 불러올 수 있다.
+def infinite_generator():
+...     count = 0
+...     while True:
+...             count+=1
+...             yield count
+... 
+>>> gen = infinite_generator()
+>>> next(gen)
+1
+>>> next(gen)
+2
+>>> next(gen)
+3
+>>> next(gen)
+4
+>>> next(gen)
+5
+>>> next(gen)
+6
+>>> next(gen)
+7
+>>> next(gen)
+8
+>>> next(gen)
+9
+>>> next(gen)
+10
+>>> next(gen)
+11
+>>> next(gen)
+12
+
+# 그리고 다른 변수로 지정이 되면 따로 순서가 생긴다.
+def test_generator():
+    yield 1
+    yield 2
+    yield 3
+>>> a = test_generator()
+>>> b = test_generator()
+>>> a == b
+False
+>>>next(a)
+1
+>>>next(a)
+2
+>>>next(b)
+1
+>>>next(a)
+3
+>>>next(b)
+2
