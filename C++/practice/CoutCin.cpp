@@ -1,13 +1,13 @@
 #include <iostream>
 using namespace std;
 
-int main()
-{
+int main() {
     int age;
-
-    cout << "여러분의 나이를 입력해 주세요 : ";
-    cin >> age;
-
-    cout << "여러분의 나이는 " << age << "살 입니다." << endl;
+    double height;
+    
+    cout << "Enter your age and height: ";
+    cin >> age >> height;  // 공백으로 구분된 두 값을 입력받음
+    
+    cout << "You are " << age << " years old and " << height << " meters tall." << std::endl;
     return 0;
 }
