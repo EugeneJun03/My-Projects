@@ -1,11 +1,20 @@
 #include <iostream>
 using namespace std;
+/*if-else statement structure
+if ("Conditional statement") {
+    "Command statement"
+} else if ("Conditional statement") {
+    "Command statement"
+} else ("Conditional statement") {
+    "Command statement"
+*/
 
 int main() {
-    int score;
+    int score; // Define Vriable
     cout << "Enter yout score: ";
-    cin >> score;
+    cin >> score; // getting input
 
+    // The if-else statement has very similar structure
     if (score >= 90) {
         cout << "Grade: A" << endl;
     } else if (score >= 80) {
