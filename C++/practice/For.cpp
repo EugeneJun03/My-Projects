@@ -1,4 +1,9 @@
 #include <iostream>
+/*For statement structure
+for (def variable; Termination Condition; increase/decrease) {
+    Command statement
+    }
+*/
 
 int main() {
     // Increase
@@ -7,7 +12,7 @@ int main() {
     }
 
     std::cout << "---------"<< std::endl;
-    
+
     // Decrease
     for (int i = 5; i >= 1; i--) {  // 조건을 i >= 1로 수정
         std::cout << "Count: " << i << std::endl;
